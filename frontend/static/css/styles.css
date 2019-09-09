@@ -1,0 +1,87 @@
+/* Font Imports */
+
+@font-face {
+  font-family: "PubSubFont";
+  font-display: swap;
+  src: url("../fonts/pubsub.woff2") format("woff2"),
+    url("../fonts/pubsub.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../fonts/roboto.woff2") format("woff2"),
+    url("../fonts/roboto.woff") format("woff");
+}
+
+/* Typography */
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Theme */
+
+body {
+  background: #43a047;
+  background-image: linear-gradient(135deg, #43a047 10%, #28c76f 100%);
+  color: #fafafa;
+}
+
+/* Custom Styles */
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  padding: 0 30px;
+  text-align: center;
+}
+
+main > .site-title {
+  font-family: "PubSubFont", sans-serif;
+  font-size: 3.75em;
+  line-height: 1;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+main > .sub-of-the-week {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+main > .sub-of-the-week > .price {
+  font-size: 1.25rem;
+}

@@ -1,0 +1,18 @@
+baseURL = "https://pubsub.club/"
+languageCode = "en-us"
+title = "Pub Sub of the Week"
+description = ""
+disableKinds = ["page", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
+
+[outputFormats]
+  [outputFormats.API]
+  mediaType = "application/json"
+  baseName = "api"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+home = [
+  "HTML",
+  "API"
+]
