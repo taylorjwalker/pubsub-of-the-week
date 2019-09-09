@@ -12,12 +12,12 @@
     <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    {{ $subJ := getJSON "https://pubsub.club/.netlify/functions/getSub" }}
+    <!-- {{ $subJ := getJSON "https://pubsub.club/.netlify/functions/getSub" }} -->
     <main>
       <h1 class="site-title">{{ .Title }}</h1>
       <div class="sub-of-the-week">
-        <p class="name">{{ $subJ.name }}</p>
-        <p class="price">${{ $subJ.price }}</p>
+        <p class="name"></p> <!-- {{ $subJ.name }} -->
+        <p class="price">$</p> <!-- {{ $subJ.price }} -->
       </div>
     </main>
   </body>
