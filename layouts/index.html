@@ -16,10 +16,8 @@
     <main>
       <h1 class="site-title">{{ .Title }}</h1>
       <div class="sub-of-the-week">
-        <p class="name"></p>
-        {{ $subJ.name }}
-        <p class="price">$</p>
-        {{ $subJ.price }}
+        <p class="name">{{ $subJ.name }}</p>
+        <p class="price">${{ $subJ.price }}</p>
       </div>
     </main>
   </body>
