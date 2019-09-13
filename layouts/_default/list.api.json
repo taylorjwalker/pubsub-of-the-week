@@ -1,2 +1,2 @@
 {{ $subJ := getJSON "https://pubsub-of-the-week.netlify.com/.netlify/functions/getSub" }}
-{{ $subJ }}
+{{ $subJ | jsonify }}
