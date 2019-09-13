@@ -1,2 +1,2 @@
-{{ $subJ := getJSON "https://pubsub.club/.netlify/functions/getSub" }}
+{{ $subJ := getJSON "https://pubsub.club/api" }}
 {{ $subJ | jsonify }}
