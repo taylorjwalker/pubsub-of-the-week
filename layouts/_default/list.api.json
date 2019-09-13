@@ -1,2 +1,2 @@
 {{ $subJ := getJSON "https://competent-allen-6965f9.netlify.com/.netlify/functions/getSub" }}
-{{ $subJ }}
+{{{ $subJ }}}
