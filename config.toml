@@ -5,14 +5,14 @@ description = ""
 disableKinds = ["page", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
 
 [outputFormats]
-  [outputFormats.API]
+  [outputFormats.CACHE]
   mediaType = "application/json"
-  baseName = "api"
+  baseName = "cache"
   isPlainText = true
   notAlternative = true
 
 [outputs]
 home = [
   "HTML",
-  "API"
+  "CACHE"
 ]

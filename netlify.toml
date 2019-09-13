@@ -19,5 +19,5 @@ status = 200
 
 [[redirects]]
 from = "/cache"
-to = "https://pubsub.club/api.json"
+to = "https://pubsub.club/cache.json"
 status = 200
