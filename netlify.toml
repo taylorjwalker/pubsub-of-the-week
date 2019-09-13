@@ -11,3 +11,8 @@ HUGO_ENABLEGITINFO = "true"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.57.2"
+
+[[redirects]]
+from = "/api"
+to = "/api.json"
+status = 200
