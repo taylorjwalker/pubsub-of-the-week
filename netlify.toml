@@ -14,5 +14,10 @@ HUGO_VERSION = "0.57.2"
 
 [[redirects]]
 from = "/api"
-to = "/api.json"
+to = "https://pubsub.club/.netlify/functions/getSub"
+status = 200
+
+[[redirects]]
+from = "/cache"
+to = "https://pubsub.club/api.json"
 status = 200
