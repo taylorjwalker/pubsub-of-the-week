@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "PubSubFont";
+  font-display: swap;
+  src: url("../fonts/pubsub.woff2") format("woff2"),
+    url("../fonts/pubsub.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../fonts/roboto.woff2") format("woff2"),
+    url("../fonts/roboto.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Roboto Black"), local("Roboto-Black"),
+    url("../fonts/roboto-black.woff2") format("woff2"),
+    url("../fonts/roboto-black.woff") format("woff");
+}
+
+.center-xy {
+  display: grid;
+  place-items: center;
+}
+
+body {
+  background: #00d632;
+  color: #2d2d2d;
+  font-family: Roboto;
+  font-size: 1.75rem;
+}
+
+.title {
+  font-family: PubSubFont;
+  color: #eaeaea;
+  font-size: 4rem;
+  line-height: 0.66;
+  text-align: center;
+  margin-left: -5px;
+  text-shadow: 0 10px 20px rgba(18, 18, 18, 0.2),
+    0 6px 6px rgba(18, 18, 18, 0.25);
+}
+
+.info {
+  position: relative;
+  background: #eaeaea;
+  max-width: 50rem;
+  padding: 3rem;
+  box-shadow: 0 10px 20px rgba(18, 18, 18, 0.2),
+    0 6px 6px rgba(18, 18, 18, 0.25);
+  text-align: center;
+}
+
+.name {
+  font-weight: 900;
+}
