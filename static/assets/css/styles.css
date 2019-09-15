@@ -25,16 +25,17 @@
     url("../fonts/roboto-black.woff") format("woff");
 }
 
-.center-xy {
-  display: grid;
-  place-items: center;
-}
-
 body {
   background: #00d632;
   color: #2d2d2d;
   font-family: Roboto;
   font-size: 1.75rem;
+  margin: 1.5rem;
+}
+
+.center-xy {
+  display: grid;
+  place-items: center;
 }
 
 .title {
