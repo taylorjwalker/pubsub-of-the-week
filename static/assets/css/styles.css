@@ -42,11 +42,17 @@ body {
   font-family: PubSubFont;
   color: #eaeaea;
   font-size: 4rem;
-  line-height: 0.66;
+  line-height: 1;
   text-align: center;
   margin-left: -5px;
   text-shadow: 0 10px 20px rgba(18, 18, 18, 0.2),
     0 6px 6px rgba(18, 18, 18, 0.25);
+}
+
+@media only screen and (min-width: 700px) {
+  .title {
+    margin-bottom: -0.66rem;
+  }
 }
 
 .info {
