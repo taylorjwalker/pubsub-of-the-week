@@ -16,3 +16,8 @@ home = [
   "HTML",
   "CACHE"
 ]
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = 0
