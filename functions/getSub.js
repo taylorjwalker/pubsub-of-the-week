@@ -47,7 +47,7 @@ const getSubData = async () => {
 };
 
 const getImagePath = subName => {
-  if (subName.toLowercase().includes("chicken tender")) {
+  if (subName.toLowerCase().includes("chicken tender")) {
     return "https://pubsub.club/images/publix/chicken-tender.jpg";
   } else return "";
 };
