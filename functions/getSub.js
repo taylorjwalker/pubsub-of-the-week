@@ -42,6 +42,12 @@ const getSubData = async () => {
     price: subOfTheWeek.finalPrice,
     priceCurrency: "USD",
     priceValidUntil: subOfTheWeek.wa_postEndDate.split("T")[0],
-    image: subOfTheWeek.enhancedImageUrl
+    image: getImagePath(subOfTheWeek.title)
   };
+};
+
+const getImagePath = subName => {
+  if (subName.toLowercase().includes("chicken tender")) {
+    return "./images/publix/chicken-tender.jpg";
+  } else return "";
 };
