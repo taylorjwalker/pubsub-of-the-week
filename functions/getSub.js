@@ -1,6 +1,7 @@
 "use strict";
 
 const axios = require("axios");
+const decode = require("unescape");
 
 exports.handler = async () => {
   try {
@@ -30,15 +31,17 @@ const getSubData = async () => {
     item =>
       item.savingType &&
       item.savingType === "WeeklyAd" &&
-      (item.department && item.department === "Deli") &&
-      (item.title && item.title.includes("Whole Sub"))
+      item.department &&
+      item.department === "Deli" &&
+      item.title &&
+      item.title.includes("Whole Sub")
   )[0];
 
   return {
     "@context": "https://schema.org",
     "@type": "Offer",
-    name: subOfTheWeek.title,
-    description: subOfTheWeek.description,
+    name: sanitize(subOfTheWeek.title),
+    description: sanitize(subOfTheWeek.description),
     price: subOfTheWeek.finalPrice,
     priceCurrency: "USD",
     priceValidUntil: subOfTheWeek.wa_postEndDate.split("T")[0],
@@ -47,7 +50,47 @@ const getSubData = async () => {
 };
 
 const getImagePath = subName => {
-  if (subName.toLowerCase().includes("chicken tender")) {
-    return "https://pubsub.club/images/publix/chicken-tender.jpg";
-  } else return "";
+  subName = subName.toLowerCase();
+  const brand = subName.includes("publix") ? "publix" : "boarshead";
+  const fileName = subKeywords.forEach(keyword => {
+    if (subName.includes(keyword)) {
+      return keyword.replace("and", "").replace(" ", "-");
+    }
+  });
+  return `https://pubsub.club/images/${brand}/${fileName}.jpg`;
 };
+
+const sanitize = str => {
+  return decode(str, "all")
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201C\u201D]/g, '"')
+    .replace(/[^\w\d\s!"#$%&'(),\-./:;?]/g, "");
+};
+
+const subKeywords = [
+  "chicken salad",
+  "chicken tender",
+  "cuban",
+  "egg salad",
+  "ham and turkey",
+  "ham",
+  "italian",
+  "meatball",
+  "mojo pork",
+  "orange and blue",
+  "philly cheese",
+  "roast beef",
+  "tuna salad",
+  "turkey cranberry",
+  "turkey",
+  "ultimate",
+  "veggie",
+  "american",
+  "blt",
+  "cordon bleu",
+  "deluxe",
+  "everroast",
+  "havana bold",
+  "jerk turkey",
+  "maple honey turkey"
+];
