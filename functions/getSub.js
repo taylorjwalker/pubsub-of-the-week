@@ -52,9 +52,10 @@ const getSubData = async () => {
 const getImagePath = subName => {
   subName = subName.toLowerCase();
   const brand = subName.includes("publix") ? "publix" : "boarshead";
-  const fileName = subKeywords.forEach(keyword => {
+  let fileName = "";
+  subKeywords.forEach(keyword => {
     if (subName.includes(keyword)) {
-      return keyword.replace("and", "").replace(" ", "-");
+      fileName = keyword.replace("and", "").replace(" ", "-");
     }
   });
   return `https://pubsub.club/images/${brand}/${fileName}.jpg`;
