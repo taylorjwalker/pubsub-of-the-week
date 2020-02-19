@@ -27,7 +27,7 @@ const getSubData = async () => {
   };
 
   const { data: searchResponse } = await axios.get(API_URL, OPTIONS);
-  const subOfTheWeek = searchResponse.filter(
+  const subsOfTheWeek = searchResponse.filter(
     item =>
       item.savingType &&
       item.savingType === "WeeklyAd" &&
@@ -35,7 +35,13 @@ const getSubData = async () => {
       item.department === "Deli" &&
       item.title &&
       item.title.includes("Whole Sub")
-  )[0];
+  );
+  let subOfTheWeek = subsOfTheWeek[0];
+  if (subsOfTheWeek.length > 5) {
+    subOfTheWeek.title = "ALL Publix & Boar's Head Subs";
+    subOfTheWeek.description = "";
+    subOfTheWeek.image = "";
+  }
 
   return {
     "@context": "https://schema.org",
